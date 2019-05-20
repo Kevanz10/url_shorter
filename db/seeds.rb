@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 100.times.each_with_index do |x, i|
-  url = ShortUrl.new(url: "https://google#{i}.com")
+  url = ShortUrl.new(url: "https://www.google.com.co/search?q=#{i}")
   url.visits_count = i + 1
   url.save
 end
