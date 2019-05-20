@@ -1,0 +1,25 @@
+<div class="container text-center">
+  <h1 class="urls-title">Top 100 most accessed URLs</h1>
+  <%= link_to 'Create short URl', new_short_url_path, class: 'btn btn-success new-url' %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Url</th>
+        <th>Shorted url</th>
+        <th>Visit count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@short_urls.each do |short_url|%>
+        <tr>
+          <th><%= short_url.url%></th>
+          <th> <%= request.base_url%>/<%= short_url.shorted_url%> </th>
+          <td><%= short_url.visits_count%></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+<div class="text-center pagination-center">
+  <%= will_paginate @short_urls%>
+</div>

@@ -1,0 +1,17 @@
+development:
+ adapter: postgresql
+ encoding: unicode
+ host: localhost
+ database: blue_code
+ pool: 5
+ username: kevinrojas
+ password: 
+
+test:
+ adapter: postgresql
+ encoding: unicode
+ host: localhost
+ database: blue_code_test
+ pool: 5
+ username: kevinrojas
+ password: 
