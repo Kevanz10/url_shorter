@@ -12,7 +12,7 @@ class ShortUrlsController < ApplicationController
 		@short_url = ShortUrl.new(short_urls_params)
 		respond_to do |format|
       if @short_url.save
-        format.html { redirect_to short_urls_path, notice: 'Short url created' }
+        format.html { redirect_to short_urls_path, notice: "Your URL is: #{request.base_url}/#{@short_url.shorted_url}" }
       else
       	flash[:error] = @short_url.errors.full_messages
 				format.html { render :new}
