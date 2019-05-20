@@ -5,8 +5,6 @@ RSpec.describe ShortUrlsController, type: :controller do
   let(:short_url) { ShortUrl.create(url: 'https://google.com') }
 
   describe 'Get /:short_url_id' do
-    let (:body) { JSON.parse(last_response.body)}
-    byebug
     it 'should redirect to original URL' do
       get :redirection, params: {short_url_id: short_url.shorted_url}
       expect(response).to redirect_to(short_url.url)
