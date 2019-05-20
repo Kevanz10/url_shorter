@@ -25,7 +25,6 @@ class ShortUrl < ApplicationRecord
 
     def url_format_validator
       message = "Invalid url. Match sure the url matches this format's example: https://www.example.com"
-      #errors.add_to_base(message) unless self.url =~ URL_REGREX_VALIDATOR   
       errors[:base] << message unless self.url =~ URL_REGREX_VALIDATOR
     end
 
