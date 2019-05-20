@@ -1,24 +1,24 @@
-# README
+# Ruby URL shorter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started / Instalation
 
-Things you may want to cover:
+```
+bundle install
+rake db:migrate
+rake db:seed
 
-* Ruby version
+```
 
-* System dependencies
+## How it works?
 
-* Configuration
+Converts a full URL into an unique combination of 5 characters, numbers and letters,
+every URL has an expiration time of 15 days.
+After The Shorter is created i use a service, UrlTitleExtractor, that
+extracts the title from the page. If for some reason the page is down, job is retried
+one more time.
 
-* Database creation
+I used HTTparty and Nokogiri to make this magic.
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## How to run specs
+* bundle exec rspec.
